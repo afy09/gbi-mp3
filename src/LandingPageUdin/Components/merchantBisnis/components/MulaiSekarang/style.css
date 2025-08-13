@@ -1,0 +1,6 @@
+.bg-patters {
+  background-image: url("../../image/patters.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
