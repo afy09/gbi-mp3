@@ -11,6 +11,7 @@ import Satuan from "../Components/About/Satuan";
 import JenisGerai from "../Components/JenisGerai";
 import ProgramKerja from "../Components/Program/program";
 import Gallery from "../Components/galeri/galeri";
+import ChatWidget from "../Components/ChatWidget/chatwidget";
 
 const HEADER_HEIGHT = 96;
 const LandingPageUdin: React.FC = () => {
@@ -68,58 +69,62 @@ const LandingPageUdin: React.FC = () => {
   };
 
   return (
-    <section className="font-signika max-w-[1440px] mx-auto ">
-      <div className="fixed top-0 left-0 w-full z-40 bg-white">
-        <Navbar currentPage={currentPage} isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} setIsMenuOpen={setIsMenuOpen} />
-      </div>
+    <>
+      <section className="font-signika max-w-[1440px] mx-auto ">
+        <div className="fixed top-0 left-0 w-full z-40 bg-white">
+          <Navbar currentPage={currentPage} isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} setIsMenuOpen={setIsMenuOpen} />
+        </div>
 
-      <section className="pt-[80px] grid grid-cols-1">
-        {showComingSon ? (
-          <CamingSon />
-        ) : currentPage === "Merchant Bisnis" ? (
-          <div ref={MerchantBisnisRef}>
-            <MerchantBisnis />
-          </div>
-        ) : (
-          <>
-            <div ref={berandaRef}>
-              <HeroUdin handleMenuClick={handleMenuClick} />
+        <section className="pt-[80px] grid grid-cols-1">
+          {showComingSon ? (
+            <CamingSon />
+          ) : currentPage === "Merchant Bisnis" ? (
+            <div ref={MerchantBisnisRef}>
+              <MerchantBisnis />
             </div>
-            <div ref={fiturRef}>
-              <Fitur />
-            </div>
+          ) : (
+            <>
+              <div ref={berandaRef}>
+                <HeroUdin handleMenuClick={handleMenuClick} />
+              </div>
+              <div ref={fiturRef}>
+                <Fitur />
+              </div>
 
-            <div ref={visimisiRef}>
-              <Satuan />
-            </div>
+              <div ref={visimisiRef}>
+                <Satuan />
+              </div>
 
-            <div ref={jenisGeraiRef}>
-              <JenisGerai />
-            </div>
+              <div ref={jenisGeraiRef}>
+                <JenisGerai />
+              </div>
 
-            <div ref={tentangKamiRef}>
-              <About />
-            </div>
+              <div ref={tentangKamiRef}>
+                <About />
+              </div>
 
-            <div ref={regulasiRef}>
-              <Regulasi />
-            </div>
+              <div ref={regulasiRef}>
+                <Regulasi />
+              </div>
 
-            <div ref={galleryRef}>
-              <Gallery />
-            </div>
+              <div ref={galleryRef}>
+                <Gallery />
+              </div>
 
-            <div ref={programRef}>
-              <ProgramKerja />
-            </div>
+              <div ref={programRef}>
+                <ProgramKerja />
+              </div>
 
-            <div ref={kontakRef}>
-              <Footer handleMenuClick={handleMenuClick} />
-            </div>
-          </>
-        )}
+              <div ref={kontakRef}>
+                <Footer handleMenuClick={handleMenuClick} />
+              </div>
+            </>
+          )}
+        </section>
       </section>
-    </section>
+
+      <ChatWidget />
+    </>
   );
 };
 

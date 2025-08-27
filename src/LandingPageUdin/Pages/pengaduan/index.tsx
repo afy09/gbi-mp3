@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer";
 import { ChevronDown } from "lucide-react";
 
-const kategoriOptions = ["Upah & Tunjangan", "Pemutusan Hubungan kerja (PHK)", "Keselamatan dan Kesehatan Kerja (P3K)", "Waktu Kerja & Lembur", "Status Perjanjian Kerja", "Lainnya"];
+const kategoriOptions = ["Terima Yesus berkomitmen kembali", "Baptis", "Bergabung Connect Group", "Kesaksian", "Permintaan Doa / Konseling", "Pemberkatan Pernikahan", "Penyerahan Anak"];
 
 const Pengaduan = () => {
   const [nama, setNama] = useState("");
   const [noHp, setNoHp] = useState("");
-  const [perusahaan, setPerusahaan] = useState("");
+  const [email, setEmail] = useState("");
   const [kategori, setKategori] = useState("");
   const [provinsi, setProvinsi] = useState("");
   const [kota, setKota] = useState("");
@@ -21,7 +21,7 @@ const Pengaduan = () => {
   const [loading, setLoading] = useState(false);
 
   const isFormValid = () => {
-    return nama && noHp && perusahaan && kategori && provinsi && kota && kecamatan && kelurahan && alamat && aduan;
+    return nama && noHp && email && kategori && provinsi && kota && kecamatan && kelurahan && alamat && aduan;
   };
 
   const handleSubmit = async (e: any) => {
@@ -31,7 +31,7 @@ const Pengaduan = () => {
     const payload = {
       nama,
       no_hp: noHp,
-      perusahaan,
+      email,
       kategori,
       provinsi,
       kota,
@@ -58,7 +58,7 @@ const Pengaduan = () => {
         // Optional: reset form
         setNama("");
         setNoHp("");
-        setPerusahaan("");
+        setEmail("");
         setKategori("");
         setProvinsi("");
         setKota("");
@@ -79,7 +79,7 @@ const Pengaduan = () => {
 
   return (
     <>
-      <div className="bg-[#144470] mx-auto flex justify-center min-h-screen">
+      <div className="bg-black2 mx-auto flex justify-center min-h-screen">
         <div className="px-7 py-5 rounded-lg w-full md:mx-8 lg:mx-20">
           <Link to="/">
             <div className="flex justify-start">
@@ -104,14 +104,14 @@ const Pengaduan = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[#cfa84d] font-semibold">Nama Perusahaan/Instansi</label>
-                <input type="text" value={perusahaan} onChange={(e) => setPerusahaan(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Nama Perusahaan" />
+                <label className="text-[#cfa84d] font-semibold">Email</label>
+                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan email" />
               </div>
 
               <div className="flex flex-col gap-2 relative">
-                <label className="text-[#cfa84d] font-semibold">Kategori Aduan</label>
+                <label className="text-[#cfa84d] font-semibold">Ya Saya Ingin</label>
                 <div className="border border-[#cfa84d] bg-white rounded-lg text-[#cfa84d] p-3 cursor-pointer flex justify-between items-center" onClick={() => setOpen(!open)}>
-                  {kategori || "Pilih Kategori Aduan"}
+                  {kategori || "Pilih Yang Ingin Dilakukan"}
                   <ChevronDown className={`w-5 h-5 transition-transform ${open ? "rotate-180" : ""}`} />
                 </div>
                 {open && (
@@ -132,33 +132,22 @@ const Pengaduan = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[#cfa84d] font-semibold">Provinsi</label>
-                <input type="text" value={provinsi} onChange={(e) => setProvinsi(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Provinsi" />
+                <label className="text-[#cfa84d] font-semibold">Usia</label>
+                <input type="text" value={provinsi} onChange={(e) => setProvinsi(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Usia" />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[#cfa84d] font-semibold">Kota/Kabupaten</label>
-                <input type="text" value={kota} onChange={(e) => setKota(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Kota/Kabupaten" />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="text-[#cfa84d] font-semibold">Kecamatan</label>
-                <input type="text" value={kecamatan} onChange={(e) => setKecamatan(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Kecamatan" />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="text-[#cfa84d] font-semibold">Kelurahan/Desa</label>
-                <input type="text" value={kelurahan} onChange={(e) => setKelurahan(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Kelurahan/Desa" />
+                <label className="text-[#cfa84d] font-semibold">Jenis Kelamin</label>
+                <select value={kota} onChange={(e) => setKota(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3">
+                  <option value="">Pilih Jenis Kelamin</option>
+                  <option value="Laki-Laki">Laki-Laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
               </div>
 
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label className="text-[#cfa84d] font-semibold">Alamat</label>
                 <textarea rows={3} value={alamat} onChange={(e) => setAlamat(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Alamat" />
-              </div>
-
-              <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-[#cfa84d] font-semibold">Sampaikan Aduan Anda</label>
-                <textarea rows={4} value={aduan} onChange={(e) => setAduan(e.target.value)} className="outline-none border border-[#cfa84d] rounded-lg text-[#cfa84d] p-3" placeholder="Masukan Aduan Anda" />
               </div>
             </div>
 
