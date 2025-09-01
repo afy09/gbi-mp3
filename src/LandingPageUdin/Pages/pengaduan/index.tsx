@@ -91,7 +91,7 @@ const Pengaduan = () => {
           <h1 className="text-3xl md:text-4xl mt-8 text-center font-bold text-[#cfa84d]">
             Formulir <span className="text-white"> Pelayanan</span>
           </h1>
-          <div className="text-white mb-8 text-center mt-2 text-sm">Bagi yang membutuhkan pelayanan diatas harap menghubungi sekertariat gereja Mp3 dengan mengisi formulir di bawah ini </div>
+          <div className="text-white mb-8 text-center mt-2 text-sm">Bagi yang membutuhkan pelayanan harap menghubungi sekertariat gereja Mp3 dengan mengisi formulir di bawah ini </div>
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
               <div className="flex flex-col gap-2">

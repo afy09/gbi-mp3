@@ -18,21 +18,20 @@ const ChatWidget: React.FC = () => {
           <div className="bg-primary2 text-white p-4 font-semibold">Telusuri Pusat Bantuan </div>
 
           <div className="p-4 max-h-96 overflow-y-auto">
-            <h3 className="font-bold mb-2">Knowledge Base Articles</h3>
             <ul className="space-y-2 text-sm">
               <Link
                 to={"/pengaduan"}
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}>
-                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Permohonan Doa, Konseling, Join CG, Baptis, Mengirimkan Kesaksian</li>
+                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Baptis </li>
               </Link>
               <Link
                 to={"/pengaduan"}
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}>
-                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Persembahan, Persepuluhan, Misi</li>
+                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Permohonan Doa</li>
               </Link>
 
               <Link
@@ -40,9 +39,25 @@ const ChatWidget: React.FC = () => {
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}>
-                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Pengajuan Pemberkatan Nikah, Penyerahan Anak</li>
+                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Pemberkatan Nikah</li>
+              </Link>
+              <Link
+                to={"/pengaduan"}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>
+                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Penyerahan anak</li>
+              </Link>
+              <Link
+                to={"/pengaduan"}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>
+                <li className="p-2 border rounded cursor-pointer hover:bg-gray-100 mt-2">Ibadah Kedukaan</li>
               </Link>
             </ul>
+
+            <h4 className="text-sm mb-2 mt-2 font-semibold">Bagi yang membutuhkan pelayanan diatas harap menghubungi sekertariat gereja Mp3</h4>
           </div>
         </div>
       )}
