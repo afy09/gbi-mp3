@@ -19,7 +19,7 @@ const HeroUdin: React.FC<NavbarProps> = ({ handleMenuClick }) => {
 
       <div className="relative z-10 flex flex-col justify-center items-center h-full px-4 text-center mt-6">
         <div className="flex justify-center mb-7 mt-2">
-          <img src="/images/logo-gereja.svg" className="w-44 h-44 " alt="" />
+          <img src="/images/logo-gereja.svg" className="w-48 h-44 " alt="" />
         </div>
         <h1 className="text-[29px] md:text-5xl  font-bold max-w-4xl font-edu ">
           GBI <span className="text-[#FFB4B4]">MP3</span>

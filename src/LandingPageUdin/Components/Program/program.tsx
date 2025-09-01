@@ -47,9 +47,7 @@ const ProgramKerja = () => {
 
   return (
     <div className="bg-black2 py-10 px-10">
-      <div className="text-[#cfa84d] text-xl md:text-3xl text-center font-semibold mt-0 md:mt-4 mb-6">
-        Donasi & <span className="text-white">Persembahan</span>
-      </div>
+      <div className="text-[#cfa84d] text-xl md:text-3xl text-center font-semibold mt-0 md:mt-4 mb-6">Persembahan</div>
 
       <Swiper
         slidesPerView={1}

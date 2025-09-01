@@ -12,17 +12,20 @@ const Regulasi = () => {
         {/* Regulations List */}
         <div className="bg-white p-4 md:p-6 space-y-3">
           <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
-            <span className="font-bold text-primary2">Ibadah Umum :</span> Minggu, pukul <span className="font-bold">08.00</span>
+            <span className="font-bold text-primary2">Ibadah Raya I :</span> Jam <span className="font-bold">08.00 sd 10.00</span>
           </div>
           <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
-            <span className="font-bold text-primary2">Sekolah Minggu : </span> Minggu, pukul <strong>10.00</strong>
+            <span className="font-bold text-primary2">Ibadah Raya II :</span> Jam <span className="font-bold">10.30 sd 12.30 </span> (Disertai sekolah minggu dan Perjamuan Kasih makan siang)
           </div>
           <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
-            <span className="font-bold text-primary2">Ibadah Doa :</span> Rabu, pukul <span className="font-bold">18.00</span>
+            <span className="font-bold text-primary2">Ibadah III :</span> Jam <span className="font-bold">16.00 sd 18.00</span> (Disertai sekolah minggu)
+          </div>
+
+          <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
+            <span className="font-bold text-primary2">Ibadah WBI :</span> Jam <span className="font-bold">16.00 sd 18.00</span> setiap Sabtu minggu ke 3 (1 bulan sekali)
           </div>
           <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
-            {" "}
-            <span className="font-bold text-primary2">Pemuda Remaja :</span> Jumat, pukul <strong>19.00</strong>
+            <span className="font-bold text-primary2">Ibadah Youth :</span> Jam <span className="font-bold">17.00 sd 19.00</span> setiap Sabtu minggu ke 2 (1  bulan sekali)
           </div>
         </div>
       </div>

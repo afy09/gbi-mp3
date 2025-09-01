@@ -12,6 +12,7 @@ import JenisGerai from "../Components/JenisGerai";
 import ProgramKerja from "../Components/Program/program";
 import Gallery from "../Components/galeri/galeri";
 import ChatWidget from "../Components/ChatWidget/chatwidget";
+import SoundPlayer from "../Components/sound/sound";
 
 const HEADER_HEIGHT = 96;
 const LandingPageUdin: React.FC = () => {
@@ -34,10 +35,7 @@ const LandingPageUdin: React.FC = () => {
   const handleMenuClick = (page: string) => {
     if (page === "Merchant Bisnis") {
       setCurrentPage(page);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
@@ -53,7 +51,7 @@ const LandingPageUdin: React.FC = () => {
         "Jadwal Ibadah": regulasiRef,
         Bantuan: bantuanRef,
         Galeri: galleryRef,
-        Donasi: programRef,
+        Persembahan: programRef,
         Kontak: kontakRef,
       }[page];
 
@@ -63,7 +61,7 @@ const LandingPageUdin: React.FC = () => {
           behavior: "smooth",
         });
       }
-    }, 100); // Memberi waktu agar komponen bisa update sebelum scroll
+    }, 100);
 
     setIsMenuOpen(false);
   };
@@ -90,31 +88,24 @@ const LandingPageUdin: React.FC = () => {
               <div ref={fiturRef}>
                 <Fitur />
               </div>
-
               <div ref={visimisiRef}>
                 <Satuan />
               </div>
-
               <div ref={jenisGeraiRef}>
                 <JenisGerai />
               </div>
-
               <div ref={tentangKamiRef}>
                 <About />
               </div>
-
               <div ref={regulasiRef}>
                 <Regulasi />
               </div>
-
               <div ref={galleryRef}>
                 <Gallery />
               </div>
-
               <div ref={programRef}>
                 <ProgramKerja />
               </div>
-
               <div ref={kontakRef}>
                 <Footer handleMenuClick={handleMenuClick} />
               </div>
@@ -122,6 +113,10 @@ const LandingPageUdin: React.FC = () => {
           )}
         </section>
       </section>
+
+      <div className="-mt-10">
+        <SoundPlayer />
+      </div>
 
       <ChatWidget />
     </>
