@@ -17,6 +17,7 @@ module.exports = {
       fontFamily: {
         edu: ['"Edu NSW ACT Cursive"', "cursive"],
         roboto: ["Roboto", "sans-serif"],
+        ubuntu: ["Ubuntu", "sans-serif"],
       },
 
       colors: {

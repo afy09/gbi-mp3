@@ -23,7 +23,7 @@ const GeraiSection = () => {
   return (
     <section className="relative w-full text-white">
       {/* Background */}
-      <img className="absolute top-0 left-0 w-full h-full object-cover" src="/images/bg-profile.jpg" alt="" />
+      <img className="absolute top-0 left-0 w-full h-full object-cover" src="/images/foto1.jpg" alt="" />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-40" />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer";
 import { ChevronDown } from "lucide-react";
 
-const kategoriOptions = ["Terima Yesus berkomitmen kembali", "Baptis", "Bergabung Connect Group", "Kesaksian", "Permintaan Doa / Konseling", "Pemberkatan Pernikahan", "Penyerahan Anak"];
+const kategoriOptions = ["Baptis", "Permohonan Doa", "Pemberkatan Nikah", "Penyerahan anak", "Ibadah Kedukaan"];
 
 const Pengaduan = () => {
   const [nama, setNama] = useState("");
@@ -88,9 +88,10 @@ const Pengaduan = () => {
               </div>
             </div>
           </Link>
-          <h1 className="text-3xl md:text-4xl mt-4 mb-8 text-center font-bold text-[#cfa84d]">
-            Formulir <span className="text-white"> Pengaduan</span>
+          <h1 className="text-3xl md:text-4xl mt-8 text-center font-bold text-[#cfa84d]">
+            Formulir <span className="text-white"> Pelayanan</span>
           </h1>
+          <div className="text-white mb-8 text-center mt-2 text-sm">Bagi yang membutuhkan pelayanan diatas harap menghubungi sekertariat gereja Mp3 dengan mengisi formulir di bawah ini </div>
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
               <div className="flex flex-col gap-2">

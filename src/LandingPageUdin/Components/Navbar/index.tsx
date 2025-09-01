@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, isMenuOpen, handleMenuClic
     MENU_ITEMS.map((item) => (
       <div
         key={item}
-        className={`cursor-pointer text-base px-3 py-1 rounded-full transition-all duration-300 font-edu ${currentPage === item ? "text-primary font-bold text-lg" : "text-black hover:text-primary "}`}
+        className={`cursor-pointer text-base px-3 py-1 rounded-full transition-all duration-300 font-ubuntu ${currentPage === item ? "text-primary font-bold text-lg" : "text-black hover:text-primary "}`}
         onClick={() => handleMenuClick(item)}>
         {item}
       </div>
@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, isMenuOpen, handleMenuClic
       }`}>
       {/* Logo & Brand */}
       <div className="flex items-center gap-2">
-        <img src="/images/logo-gereja.svg" alt="Logo" className="w-14 h-14" />
+        <img src="/images/logo-gereja.svg" alt="Logo" className="w-16 h-14" />
       </div>
 
       {/* Desktop Menu */}
@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, isMenuOpen, handleMenuClic
       <div className={`fixed top-0 left-0 w-full bg-white z-40 rounded-b-3xl transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}>
         <div className="pt-24 pb-8 px-6 space-y-6 text-lg font-medium text-black">
           {MENU_ITEMS.map((item) => (
-            <div key={item} onClick={() => handleMenuClick(item)} className="cursor-pointer hover:text-primary font-edu">
+            <div key={item} onClick={() => handleMenuClick(item)} className="cursor-pointer hover:text-primary font-ubuntu">
               {item}
             </div>
           ))}
