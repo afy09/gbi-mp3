@@ -3,36 +3,42 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 const fiturData = [
   {
-    title: "Sekolah Minggu",
-    description: "Pembinaan iman anak-anak melalui pengajaran Alkitab, nyanyian rohani, dan aktivitas kreatif yang membangun karakter Kristus sejak dini.",
-    image: "/images/sekolahminggu1.jpg",
+    title: "Baptis",
+    description: "Baptisan Kristen Protestan adalah sakramen inisiasi yang melambangkan pembersihan dosa, kematian terhadap kehidupan lama, dan kebangkitan ke kehidupan baru bersama Kristus, serta penyambutan ke dalam persekutuan gereja.",
+    description2: "Bagi yang membutuhkan pelayanan harap menghubungi sekertariat gereja Mp3. Klik disini!",
+    image: "/images/baptis.jpg",
     cards: [{ image: "/images/foto1.jpg" }, { image: "/images/foto2.jpg" }, { image: "/images/foto3.jpg" }],
   },
   {
-    title: "Komsel Pemuda",
-    description: "Persekutuan dan pembinaan rohani bagi pemuda untuk bertumbuh dalam iman, saling menguatkan, dan melayani bersama.",
-    image: "/images/gereja2.jpg",
-    cards: [{ image: "/images/foto1.jpg" }, { image: "/images/foto2.jpg" }, { image: "/images/foto3.jpg" }],
-  },
-  {
-    title: "Kelas Pemuridan",
-    description: "Pengajaran Alkitab yang lebih mendalam untuk menolong jemaat menjadi murid Kristus yang berakar, bertumbuh, dan berbuah.",
+    title: "Permohonan Doa",
+    description: "Permohonan doa dalam Kristen Protestan bertujuan memohon berkat, pertolongan, dan bimbingan Tuhan dalam berbagai aspek kehidupan, mulai dari masalah pribadi hingga kebutuhan jemaat dan bangsa.",
+    description2: "Bagi yang membutuhkan pelayanan harap menghubungi sekertariat gereja Mp3. Klik disini!",
     image: "/images/kelas.jpg",
     cards: [{ image: "/images/foto1.jpg" }, { image: "/images/foto2.jpg" }, { image: "/images/foto3.jpg" }],
   },
   {
-    title: "Pelayanan Sosial",
-    description: "Kegiatan pelayanan yang menjangkau dan membantu masyarakat yang membutuhkan melalui aksi nyata kasih Kristus.",
-    image: "/images/pelayanansosial.jpg",
+    title: "Pemberkatan Nikah",
+    description: "Pemberkatan nikah Kristen Protestan adalah upacara sakral di gereja yang memformalkan janji pernikahan di hadapan Tuhan dan jemaat, dipimpin oleh pendeta atau gembala jemaat.",
+    description2: "Bagi yang membutuhkan pelayanan harap menghubungi sekertariat gereja Mp3. Klik disini!",
+    image: "/images/nikah.jpeg",
     cards: [{ image: "/images/foto1.jpg" }, { image: "/images/foto2.jpg" }, { image: "/images/foto3.jpg" }],
   },
   {
-    title: "Baptisan & Kelas Katekisasi",
-    description: "Persiapan rohani dan pengajaran dasar iman bagi jemaat yang akan dibaptis dan mengaku percaya kepada Kristus.",
-    image: "/images/baptis.jpg",
+    title: "Penyerahan Anak",
+    description: "Penyerahan Anak Kristen Protestan adalah sebuah ibadah atau seremoni di gereja di mana orang tua menyerahkan anak mereka kepada Tuhan sebagai pengakuan bahwa anak adalah milik Tuhan.",
+    description2: "Bagi yang membutuhkan pelayanan harap menghubungi sekertariat gereja Mp3. Klik disini!",
+    image: "/images/anak.jpeg",
+    cards: [{ image: "/images/foto1.jpg" }, { image: "/images/foto2.jpg" }, { image: "/images/foto3.jpg" }],
+  },
+  {
+    title: "Ibadah Kedukaan",
+    description: "Ibadah kedukaan Kristen Protestan adalah kebaktian yang bertujuan memberikan penghiburan, dukungan, dan kekuatan rohani kepada keluarga dan pelayat yang berduka atas kehilangan orang terkasih",
+    description2: "Bagi yang membutuhkan pelayanan harap menghubungi sekertariat gereja Mp3. Klik disini!",
+    image: "/images/duka.jpg",
     cards: [{ image: "/images/foto1.jpg" }, { image: "/images/foto2.jpg" }, { image: "/images/foto3.jpg" }],
   },
 ];
@@ -43,7 +49,7 @@ const Fitur = () => {
       <div className="relative px-5 xl:px-10">
         {/* Title */}
         <div className="flex gap-5 items-center mb-10">
-          <h1 className="lg:text-[28px]  font-semibold text-[18px]  text-[#cfa84d] w-96">KEGIATAN GEREJA</h1>
+          <h1 className="lg:text-[24px]  font-semibold text-[18px]  text-[#cfa84d] w-96">PELAYANAN GEREJA</h1>
           <div className="w-full h-[4px] bg-black2 text-black2"></div>
         </div>
 
@@ -59,9 +65,12 @@ const Fitur = () => {
 
                 {/* Right Content */}
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-black2 mb-4">{item.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-black2 ">{item.title}</h3>
 
-                  <p className="text-gray-500 text-base leading-relaxed mb-8 text-justify">{item.description}</p>
+                  <p className="text-gray-500 text-base leading-relaxed mb-1 text-justify">{item.description}</p>
+                  <Link to="/Pengaduan">
+                    <p className="text-blue-600 text-sm leading-relaxed mb-4 text-justify">{item.description2}</p>
+                  </Link>
 
                   <div className="flex  gap-2 lg:gap-5">
                     {item.cards.map((card, idx) => (

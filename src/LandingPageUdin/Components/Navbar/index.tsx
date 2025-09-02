@@ -8,7 +8,7 @@ interface NavbarProps {
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MENU_ITEMS = ["Beranda", "Tentang Kami", "Jadwal Ibadah", "Galeri", "Persembahan", "Kontak"];
+const MENU_ITEMS = ["Beranda", "Tentang Kami", "Jadwal Ibadah", "Pelayanan", "Galeri", "Persembahan", "Kontak"];
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, isMenuOpen, handleMenuClick, setIsMenuOpen }) => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -49,7 +49,7 @@ const LandingPageUdin: React.FC = () => {
         Issue: jenisGeraiRef,
         Kegiatan: tentangKamiRef,
         "Jadwal Ibadah": regulasiRef,
-        Bantuan: bantuanRef,
+        Pelayanan: bantuanRef,
         Galeri: galleryRef,
         Persembahan: programRef,
         Kontak: kontakRef,
@@ -99,9 +99,9 @@ const LandingPageUdin: React.FC = () => {
                 <Regulasi />
               </div>
 
-              {/* <div ref={tentangKamiRef}>
+              <div ref={bantuanRef}>
                 <About />
-              </div> */}
+              </div>
               <div ref={galleryRef}>
                 <Gallery />
               </div>
