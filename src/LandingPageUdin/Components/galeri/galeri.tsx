@@ -6,11 +6,20 @@ const FaChevronRight = require("react-icons/fa").FaChevronRight;
 const Gallery = () => {
   const allImages = [
     { src: "/images/gereja2.jpg", category: "Ibadah" },
-    { src: "/images/gereja3.jpg", category: "Ibadah" },
+    { src: "/images/gereja3.jpg", category: "Outing" },
     { src: "/images/gereja4.jpg", category: "Outing" },
     { src: "/images/gereja5.jpg", category: "Outing" },
-    { src: "/images/gereja2.jpg", category: "Natal" },
-    { src: "/images/gereja3.jpg", category: "Natal" },
+    { src: "/images/gereja7.jpg", category: "Ibadah" },
+    { src: "/images/gereja6.jpg", category: "Outing" },
+    { src: "/images/gereja8.jpg", category: "Ibadah" },
+    { src: "/images/gereja9.jpg", category: "Outing" },
+    { src: "/images/gereja10.jpg", category: "Outing" },
+    { src: "/images/gereja11.jpg", category: "Outing" },
+    { src: "/images/gereja12.jpg", category: "Outing" },
+    { src: "/images/gereja13.jpg", category: "Outing" },
+    { src: "/images/gereja14.jpg", category: "Ibadah" },
+    { src: "/images/gereja15.jpg", category: "Ibadah" },
+    { src: "/images/gereja16.jpg", category: "Ibadah" },
   ];
 
   const categories = ["All", "Ibadah", "Outing", "Natal"];
@@ -18,17 +27,18 @@ const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
   const filteredImages = selectedCategory === "All" ? allImages : allImages.filter((img) => img.category === selectedCategory);
+
+  const visibleImages = showAll ? filteredImages : filteredImages.slice(0, 6);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setIsOpen(true);
   };
 
-  const closeLightbox = () => {
-    setIsOpen(false);
-  };
+  const closeLightbox = () => setIsOpen(false);
 
   const showPrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? filteredImages.length - 1 : prev - 1));
@@ -42,8 +52,7 @@ const Gallery = () => {
     <section className="bg-white py-8 px-4 md:px-12">
       <div className="flex gap-5 items-center mb-6">
         <div className="w-full h-[4px] bg-black2 text-black2"></div>
-
-        <h1 className="lg:text-[25px]  font-semibold text-[18px]  text-[#cfa84d] w-28">Galeri</h1>
+        <h1 className="lg:text-[25px] font-semibold text-[18px] text-[#cfa84d] w-28">Galeri</h1>
       </div>
 
       {/* Filter Tabs */}
@@ -51,7 +60,10 @@ const Gallery = () => {
         {categories.map((cat) => (
           <button
             key={cat}
-            onClick={() => setSelectedCategory(cat)}
+            onClick={() => {
+              setSelectedCategory(cat);
+              setShowAll(false); // reset saat ganti kategori
+            }}
             className={`px-4 py-2 rounded-lg border transition ${selectedCategory === cat ? "bg-[#cfa84d] text-white border-[#cfa84d]" : "bg-white text-[#cfa84d] border-[#cfa84d] hover:bg-[#cfa84d] hover:text-white"}`}>
             {cat}
           </button>
@@ -60,30 +72,35 @@ const Gallery = () => {
 
       {/* Grid Galeri */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4">
-        {filteredImages.map((img, index) => (
+        {visibleImages.map((img, index) => (
           <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg" onClick={() => openLightbox(index)}>
             <img src={img.src} alt={`Gallery ${index + 1}`} className="w-full h-48 object-cover transform group-hover:scale-110 transition duration-300" />
           </div>
         ))}
       </div>
 
+      {/* Tombol Lihat Lainnya */}
+      {!showAll && filteredImages.length > 6 && (
+        <div className="flex justify-center mt-6">
+          <button onClick={() => setShowAll(true)} className="px-6 py-2 bg-[#cfa84d] text-white rounded-lg hover:bg-[#a58239] transition">
+            Lihat Lainnya
+          </button>
+        </div>
+      )}
+
       {/* Lightbox */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          {/* Tombol Close */}
           <button onClick={closeLightbox} className="absolute top-4 right-4 text-white text-3xl">
             <FaTimes />
           </button>
 
-          {/* Tombol Prev */}
           <button onClick={showPrev} className="absolute left-4 text-white text-4xl">
             <FaChevronLeft />
           </button>
 
-          {/* Gambar */}
           <img src={filteredImages[currentIndex]?.src} alt={`Gallery ${currentIndex + 1}`} className="max-w-[90%] max-h-[80%] rounded-lg shadow-lg" />
 
-          {/* Tombol Next */}
           <button onClick={showNext} className="absolute right-4 text-white text-4xl">
             <FaChevronRight />
           </button>

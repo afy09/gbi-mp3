@@ -94,12 +94,14 @@ const LandingPageUdin: React.FC = () => {
               <div ref={jenisGeraiRef}>
                 <JenisGerai />
               </div>
-              <div ref={tentangKamiRef}>
-                <About />
-              </div>
-              <div ref={regulasiRef}>
+
+              <div className="mt-8" ref={regulasiRef}>
                 <Regulasi />
               </div>
+
+              {/* <div ref={tentangKamiRef}>
+                <About />
+              </div> */}
               <div ref={galleryRef}>
                 <Gallery />
               </div>

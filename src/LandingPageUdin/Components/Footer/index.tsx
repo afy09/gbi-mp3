@@ -17,8 +17,11 @@ const Footer: React.FC<FooterProps> = ({ className, handleMenuClick }) => {
           {/* Alamat + Sosmed */}
           <div className="w-full md:w-1/2 items-center md:items-start text-center md:text-left gap-4 block md:hidden mb-4">
             <div>
-              <h3 className="font-semibold text-lg mb-1">Alamat</h3>
-              <p className="text-sm md:text-base">
+              <h3 className="font-semibold text-lg mb-1">Kontak Kami</h3>
+              <a href="https://wa.me/628111016781" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base mt-2">
+                08111016781
+              </a>
+              <p className="text-sm md:text-base mt-1">
                 Gedung Tranka Lt.1, Jl. Raya Pasar Minggu <br />
                 Jakarta Selatan
               </p>
@@ -38,8 +41,11 @@ const Footer: React.FC<FooterProps> = ({ className, handleMenuClick }) => {
           {/* Alamat + Sosmed */}
           <div className="w-full md:w-1/2 items-center md:items-start text-center md:text-left gap-4 hidden md:block">
             <div>
-              <h3 className="font-semibold text-lg mb-1">Alamat</h3>
-              <p className="text-sm md:text-base">
+              <h3 className="font-semibold text-lg mb-1">Kontak Kami</h3>
+              <a href="https://wa.me/628111016781" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base mt-2">
+                08111016781
+              </a>
+              <p className="text-sm md:text-base mt-1">
                 Gedung Tranka Lt.1, Jl. Raya Pasar Minggu <br />
                 Jakarta Selatan
               </p>
@@ -49,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ className, handleMenuClick }) => {
         <div className="flex flex-col items-center gap-3 py-5 text-black font-poppins border border-t">
           {/* Ikon Sosial Media */}
           <div className="flex gap-4">
-            <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" className="text-black2 hover:scale-110 transition-transform">
+            <a href="https://wa.me/628111016781" target="_blank" rel="noopener noreferrer" className="text-black2 hover:scale-110 transition-transform">
               <FaWhatsapp size={20} />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-black2 hover:scale-110 transition-transform">
