@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState } from "react";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 const About: React.FC = () => {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -35,8 +37,15 @@ const About: React.FC = () => {
     <section className="max-w-[1440px] mx-auto  h-auto bg-white mt-[40px]  md:mt-[100px] z-50">
       <div className="grid mb-[50px] rounded-[16px] bg-white lg:rounded-[32px] md:rounded-[10px] opacity-100 md:grid-cols-2 grid-cols-1 gap-14 items-center lg:mx-[56px] mx-[16px] md:mx-[32px]">
         <div ref={imageRef} className={`transition-all duration-1000 ease-out transform ${imageVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"} lg:w-[588px] md:w-[300px] h-full`}>
-          <div className="">
-            <img src="/images/profile.png" alt="" className="w-full h-full object-contain" />
+          <div className="p-4 lg:p-8 max-sm:-mb-8">
+            <Swiper loop={true} modules={[Autoplay]} autoplay={{ delay: 3000, disableOnInteraction: false }} className="w-full h-full">
+              <SwiperSlide>
+                <img src="/images/padam1.png" alt="Padam 1" className="w-full h-full object-contain" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/images/padam2.png" alt="Padam 2" className="w-full h-full object-contain" />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
         <div ref={textRef} className={`transition-all duration-1000 ease-out transform ${textVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"} font-poppins md:text-left -pt-[20px] md:pt-0`}>
