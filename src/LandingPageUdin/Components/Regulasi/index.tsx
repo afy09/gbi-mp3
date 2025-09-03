@@ -46,7 +46,7 @@ const Regulasi = () => {
               Jam <span className="font-bold">15.00 sd 16.00</span>
             </div>
             <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
-              <span className="font-bold text-primary2">Doa Fajar :</span> Setiap Hari Sabtu Jam <span className="font-bold">06.00 sd 07.30 Via Zoom </span>
+              <span className="font-bold text-primary2">Doa Fajar :</span> Setiap Hari Sabtu Jam <span className="font-bold">06.00 sd 07.00 Via Zoom </span>
             </div>
             <div className="text-sm md:text-base border-b pb-4 hover:text-primary2 cursor-pointer text-justify">
               <span className="font-bold text-primary2">Menara Doa Pelayan Jemaat MDPJ :</span> Setiap Sabtu minggu ke 1 jam <span className="font-bold">09.30 sd 12.00</span> di SICC Sentul (Jadual pasti dari GBI Gatsu)

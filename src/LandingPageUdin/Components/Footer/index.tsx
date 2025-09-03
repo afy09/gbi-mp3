@@ -3,6 +3,7 @@ import React from "react";
 const FaWhatsapp = require("react-icons/fa").FaWhatsapp;
 const FaFacebookF = require("react-icons/fa").FaFacebookF;
 const FaInstagram = require("react-icons/fa").FaInstagram;
+const FaTiktok = require("react-icons/fa").FaTiktok;
 
 interface FooterProps {
   className?: string;
@@ -58,11 +59,30 @@ const Footer: React.FC<FooterProps> = ({ className, handleMenuClick }) => {
             <a href="https://wa.me/628111016781" target="_blank" rel="noopener noreferrer" className="text-black2 hover:scale-110 transition-transform">
               <FaWhatsapp size={20} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-black2 hover:scale-110 transition-transform">
+            <a
+              href="
+https://www.facebook.com/share/1UaFFVCNXC/
+"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black2 hover:scale-110 transition-transform">
               <FaFacebookF size={20} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-black2 hover:scale-110 transition-transform">
+            <a
+              href="https://www.instagram.com/gbi.mp3?igsh=ZWhqNGdkcXJka3Nv&utm_source=qr
+"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black2 hover:scale-110 transition-transform">
               <FaInstagram size={20} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@gbimp3?_t=ZS-8yvbb5i2Ivi&_r=1
+"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black2 hover:scale-110 transition-transform">
+              <FaTiktok size={20} />
             </a>
           </div>
 
