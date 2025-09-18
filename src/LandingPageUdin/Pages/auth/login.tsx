@@ -37,7 +37,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm">
         <div className="flex justify-center mb-4">
-          <img src="/images/niw.png" alt="Logo" className="w-32 h-20" />
+          <img src="/images/logo-gereja.png" alt="Logo" className="w-36 h-32" />
         </div>
         <h2 className="text-center text-xl font-bold mb-4">Login Dashboard</h2>
 

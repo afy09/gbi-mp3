@@ -51,17 +51,17 @@ const DashboardLayout = () => {
       <div className="flex min-h-screen bg-gray-100">
         {/* Sidebar */}
         <aside
-          className={`fixed z-40 top-0 left-0 h-[800px] w-52 bg-[#144470] text-white p-4 transform transition-transform duration-300 ease-in-out
+          className={`fixed z-40 top-0 left-0 h-[800px] w-52 bg-black2 text-white p-4 transform transition-transform duration-300 ease-in-out
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
         md:translate-x-0 md:static md:block`}>
           <div className="mb-8">
-            <h1 className="text-2xl font-bold">NIW Admin</h1>
-            <p className="text-sm text-gray-400">Dashboard</p>
+            <h1 className="text-2xl font-bold">GBIMP3 Admin</h1>
+            <p className="text-sm text-primary2">Dashboard</p>
           </div>
 
           <nav className="flex flex-col gap-4 text-lg">
             <Link to="/dashboard/news" className="flex items-center gap-2 text-white hover:text-yellow-400" onClick={() => setSidebarOpen(false)}>
-              <FaNewspaper /> Berita
+              <FaNewspaper /> Galeri
             </Link>
 
             <button onClick={handleLogout} className="flex items-center gap-2 text-white hover:text-red-400">
@@ -85,10 +85,10 @@ const DashboardLayout = () => {
                 <div className="hidden md:block w-8"></div>
 
                 {/* Profile info */}
-                <div className="flex justify-end items-center gap-3">
+                <div className="flex justify-end items-center gap-2">
                   {profile ? (
                     <>
-                      <img src={profile.photo} alt="Profile" className="w-8 h-8 rounded-full object-cover" />
+                      <img src={"/images/logo-gereja.png"} alt="Profile" className="w-12 h-12 rounded-full object-cover" />
                       <div>
                         <p className="text-sm font-medium text-gray-800">{profile.name}</p>
                         <p className="text-xs text-gray-500">Super Admin</p>

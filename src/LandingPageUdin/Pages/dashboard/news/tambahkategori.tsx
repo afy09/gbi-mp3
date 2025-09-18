@@ -5,12 +5,12 @@ const IoArrowBack = require("react-icons/io5").IoArrowBack;
 
 type Category = {
   id: number;
-  name: string;
+  nama: string;
   created_at: string;
 };
 
 const TambahKategori = () => {
-  const [name, setName] = useState("");
+  const [nama, setNama] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -24,7 +24,7 @@ const TambahKategori = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/categories`, {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/kategori`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCategories(res.data);
@@ -39,13 +39,13 @@ const TambahKategori = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) return;
+    if (!nama.trim()) return;
     setLoading(true);
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/categories`, { name }, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/kategori`, { nama }, { headers: { Authorization: `Bearer ${token}` } });
       alert("Kategori berhasil ditambahkan!");
-      setName("");
+      setNama("");
       fetchCategories();
     } catch (err) {
       console.error("Gagal menambahkan kategori:", err);
@@ -58,7 +58,7 @@ const TambahKategori = () => {
   const handleDelete = async (id: number) => {
     if (!window.confirm("Yakin ingin menghapus kategori ini?")) return;
     try {
-      await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/categories/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/kategori/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchCategories();
@@ -69,14 +69,14 @@ const TambahKategori = () => {
 
   const openEditModal = (category: Category) => {
     setEditCategory(category);
-    setEditName(category.name);
+    setEditName(category.nama);
     setEditModalOpen(true);
   };
 
   const handleEditSubmit = async () => {
     if (!editCategory) return;
     try {
-      await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/categories/${editCategory.id}`, { name: editName }, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/kategori/${editCategory.id}`, { nama: editName }, { headers: { Authorization: `Bearer ${token}` } });
       setEditModalOpen(false);
       setEditCategory(null);
       fetchCategories();
@@ -97,11 +97,11 @@ const TambahKategori = () => {
       <form onSubmit={handleSubmit} className="space-y-4 mb-8">
         <div>
           <label className="block mb-1 font-semibold">Nama Kategori</label>
-          <input type="text" className="w-full border px-3 py-2 rounded" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" className="w-full border px-3 py-2 rounded" value={nama} onChange={(e) => setNama(e.target.value)} placeholder="Masukkan nama kategori" />
         </div>
 
         <div className="flex justify-end">
-          <button type="submit" disabled={!name || loading} className={`py-2 px-7 rounded text-white ${name && !loading ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"}`}>
+          <button type="submit" disabled={!nama || loading} className={`py-2 px-7 rounded text-white ${nama && !loading ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"}`}>
             {loading ? "Mengirim..." : "Tambah Kategori"}
           </button>
         </div>
@@ -114,7 +114,6 @@ const TambahKategori = () => {
             <tr className="bg-gray-100">
               <th className="p-2 border">No</th>
               <th className="p-2 border">Nama Kategori</th>
-              <th className="p-2 border">Tanggal Dibuat</th>
               <th className="p-2 border">Aksi</th>
             </tr>
           </thead>
@@ -122,8 +121,7 @@ const TambahKategori = () => {
             {categories.map((cat, index) => (
               <tr key={cat.id} className="text-center">
                 <td className="border p-2">{index + 1}</td>
-                <td className="border p-2">{cat.name}</td>
-                <td className="border p-2">{new Date(cat.created_at).toLocaleDateString()}</td>
+                <td className="border p-2">{cat.nama}</td>
                 <td className="border p-2 space-x-2">
                   <button onClick={() => openEditModal(cat)} className="bg-yellow-400 px-3 py-1 rounded text-white">
                     Edit
