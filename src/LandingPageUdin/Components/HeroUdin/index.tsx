@@ -18,9 +18,7 @@ const HeroUdin: React.FC<NavbarProps> = ({ handleMenuClick }) => {
       <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
 
       <div className="relative z-10 flex flex-col justify-center items-center h-full px-4 text-center mt-6">
-        <div className="flex justify-center mb-4 mt-2 opacity-25">
-          <img src="/images/logo-gereja.svg" className="w-48 h-44 " alt="" />
-        </div>
+        <div className="flex justify-center mb-4 mt-2 max-sm:text-[45px] text-6xl font-medium  font-edu">Welcome Home</div>
         {/* <h1 className="text-[29px] md:text-5xl  font-bold max-w-4xl font-edu ">
           GBI <span className="text-[#FFB4B4]">MP3</span>
         </h1> */}
