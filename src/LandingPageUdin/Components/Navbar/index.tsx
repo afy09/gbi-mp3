@@ -35,10 +35,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, isMenuOpen, handleMenuClic
         isScrolled ? "backdrop-blur-md bg-transparent" : "bg-white"
       }`}>
       {/* Logo & Brand */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 text-primary2">
         <img src="/images/logo-gereja.svg" alt="Logo" className="w-16 h-14" />
-        <h1 className="text-xl font-bold font-edu text-[#FFB4B4] ">
-          GBI <span className="text-black2">MP3</span>
+        <h1 className="text-2xl font-bold font-roboto  ">
+          GBI <span className="">MP3</span>
         </h1>
       </div>
 

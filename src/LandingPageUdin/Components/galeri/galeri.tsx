@@ -1,35 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const FaTimes = require("react-icons/fa").FaTimes;
 const FaChevronLeft = require("react-icons/fa").FaChevronLeft;
 const FaChevronRight = require("react-icons/fa").FaChevronRight;
 
 const Gallery = () => {
-  const allImages = [
-    { src: "/images/gereja2.jpg", category: "Ibadah" },
-    { src: "/images/gereja3.jpg", category: "Outing" },
-    { src: "/images/gereja4.jpg", category: "Outing" },
-    { src: "/images/gereja5.jpg", category: "Outing" },
-    { src: "/images/gereja7.jpg", category: "Ibadah" },
-    { src: "/images/gereja6.jpg", category: "Outing" },
-    { src: "/images/gereja8.jpg", category: "Ibadah" },
-    { src: "/images/gereja9.jpg", category: "Outing" },
-    { src: "/images/gereja10.jpg", category: "Outing" },
-    { src: "/images/gereja11.jpg", category: "Outing" },
-    { src: "/images/gereja12.jpg", category: "Outing" },
-    { src: "/images/gereja13.jpg", category: "Outing" },
-    { src: "/images/gereja14.jpg", category: "Ibadah" },
-    { src: "/images/gereja15.jpg", category: "Ibadah" },
-    { src: "/images/gereja16.jpg", category: "Ibadah" },
-  ];
-
   const categories = ["All", "Ibadah", "Outing", "Natal"];
 
+  const [images, setImages] = useState<any[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
-  const filteredImages = selectedCategory === "All" ? allImages : allImages.filter((img) => img.category === selectedCategory);
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+
+  // Fetch data dari BE dengan Auth
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/api/galeri`, {
+          headers: {
+            Authorization: `Bearer ${API_TOKEN}`,
+            Accept: "application/json",
+          },
+        });
+
+        const mapped = res.data.map((item: any) => ({
+          src: item.gambar_url || "/images/no-image.png", // fallback
+          category: item.kategori?.nama || "Uncategorized",
+        }));
+
+        setImages(mapped);
+      } catch (err) {
+        console.error("Error fetching galeri:", err);
+      }
+    };
+    fetchData();
+  }, [API_BASE_URL, API_TOKEN]);
+
+  const filteredImages = selectedCategory === "All" ? images : images.filter((img) => img.category === selectedCategory);
 
   const visibleImages = showAll ? filteredImages : filteredImages.slice(0, 6);
 
@@ -62,7 +73,7 @@ const Gallery = () => {
             key={cat}
             onClick={() => {
               setSelectedCategory(cat);
-              setShowAll(false); // reset saat ganti kategori
+              setShowAll(false);
             }}
             className={`px-4 py-2 rounded-lg border transition ${selectedCategory === cat ? "bg-[#cfa84d] text-white border-[#cfa84d]" : "bg-white text-[#cfa84d] border-[#cfa84d] hover:bg-[#cfa84d] hover:text-white"}`}>
             {cat}

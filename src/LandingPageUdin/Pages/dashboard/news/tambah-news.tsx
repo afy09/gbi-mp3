@@ -110,7 +110,7 @@ const TambahNews = () => {
         </div>
 
         <button type="submit" disabled={!isFormValid || loading} className={`w-full py-2 rounded text-white mt-4 ${isFormValid && !loading ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"}`}>
-          {loading ? "Mengirim..." : "Tambah Berita"}
+          {loading ? "Mengirim..." : "Tambah Galeri"}
         </button>
       </form>
     </div>
